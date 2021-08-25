@@ -1,0 +1,54 @@
+body{
+    margin:0;
+    font-family:'Source Code Pro', monospace;
+    min-height: 100vh;
+    display: grid;
+    place-content:center;
+    text-align: center;
+    background-color: white;
+}
+h1{
+    font-size: 50px;
+    position: relative;
+    font-family: "Source Code Pro", monospace;
+    /* width: max-content; */
+}
+h1::before, h1::after{
+    content: "";
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    left: 0;
+    right:0;
+}
+h1::before{
+    background: rgb(254, 255, 255);
+    animation: typewriter 6s steps(24) 1s forwards;
+    
+}
+h1::after{
+    width: 6px;
+    background: black;
+    animation: typewriter 6s steps(24) 1s forwards, blink 650ms steps(24) infinite ;
+}
+@keyframes typewriter{
+    to{left: 100%;}
+    
+}
+@keyframes blink{
+    to{background: transparent;}
+}
+.subtitle{
+    color: rgba(173, 158, 158, 0.7);
+    font-size: 1.9rem;
+    font-weight: 400;
+    opacity: 0;
+    transform: translateY(150%);
+    animation: fadeinup 2s ease 6.5s forwards;
+}
+@keyframes fadeinup{
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
